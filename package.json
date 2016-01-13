@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --progress --colors --watch"
+    "watch": "webpack --progress --colors --watch",
+    "start": "webpack-dev-server --inline --hot"
   },
   "author": "Alex Sears",
   "license": "MIT",
