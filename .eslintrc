@@ -16,6 +16,7 @@
         "jsx": true
     },
     "rules": {
+        "semi": [2, "always"],
         "no-console": 0,
         "comma-dangle": [1, "always-multiline"],
         "react/display-name": 0,
@@ -27,10 +28,9 @@
         "react/jsx-indent-props": 1,
         "react/jsx-indent": 1,
         "react/jsx-key": 1,
-        "react/jsx-max-props-per-line": 1,
         "react/jsx-no-bind": 1,
         "react/jsx-no-duplicate-props": 1,
-        "react/jsx-no-literals": 1,
+        "react/jsx-no-literals": 0,
         "react/jsx-no-undef": 1,
         "react/jsx-pascal-case": 1,
         "jsx-quotes": 1,
