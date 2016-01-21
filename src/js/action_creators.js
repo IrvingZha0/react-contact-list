@@ -4,3 +4,14 @@ export function setState(state) {
         state,
     };
 }
+
+export function addContact(firstName, lastName, age) {
+    return {
+        type: 'ADD_CONTACT',
+        contact: {
+            firstName,
+            lastName,
+            age,
+        },
+    };
+}

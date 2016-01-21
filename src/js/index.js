@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import reducers from './reducer';
 import { setState } from './action_creators';
 import App from './components/App';
+import { fromJS } from 'immutable';
 
 let body = document.querySelector('body');
 let appContainer = document.createElement('div');
@@ -13,7 +14,7 @@ body.appendChild(appContainer);
 
 const store = createStore(reducers);
 
-store.dispatch(setState({
+store.dispatch(setState(fromJS({
     contacts: [
         {
             firstName: 'Alex',
@@ -36,7 +37,7 @@ store.dispatch(setState({
             age: 19,
         },
     ],
-}));
+})));
 
 const application = (
     <Provider store={store}>

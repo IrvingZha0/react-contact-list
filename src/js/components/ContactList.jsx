@@ -13,15 +13,15 @@ const ContactList = ({ contacts }) => {
                 </tr>
             </thead>
             <tbody>
-            {contacts.map((contact, i) => <Contact key={i} {...contact} />)}
+            {contacts.map((contact, i) => <Contact {...contact} key={i} />)}
             </tbody>
         </table>
     );
 };
 
-const mapStateToProps = ({ contacts }) => {
+const mapStateToProps = (state) => {
     return {
-        contacts,
+        contacts: state.get('contacts').toJS(),
     };
 };
 
