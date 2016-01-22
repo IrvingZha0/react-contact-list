@@ -13,7 +13,7 @@ const ContactList = ({ contacts }) => {
                 </tr>
             </thead>
             <tbody>
-            {contacts.map((contact, i) => <Contact {...contact} key={i} />)}
+            {contacts.map((contact, i) => <Contact {...contact} id={i} key={i} />)}
             </tbody>
         </table>
     );

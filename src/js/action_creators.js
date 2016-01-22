@@ -15,3 +15,10 @@ export function addContact(firstName, lastName, age) {
         },
     };
 }
+
+export function removeContact(id) {
+    return {
+        type: 'REMOVE_CONTACT',
+        id,
+    };
+}
