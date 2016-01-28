@@ -4,8 +4,8 @@ const initialState = Map({
     contacts: List(),
 });
 
-function setState(state, newState) {
-    return state.merge(newState);
+function setContacts(state, contacts) {
+    return state.set('contacts', contacts);
 }
 
 function addContact(state, contact) {
@@ -18,8 +18,8 @@ function removeContact(state, id) {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case 'SET_STATE':
-            return setState(state, action.state);
+        case 'SET_CONTACTS':
+            return setContacts(state, action.contacts);
         case 'ADD_CONTACT':
             return addContact(state, action.contact);
         case 'REMOVE_CONTACT':

@@ -1,7 +1,7 @@
-export function setState(state) {
+export function setContacts(contacts) {
     return {
-        type: 'SET_STATE',
-        state,
+        type: 'SET_CONTACTS',
+        contacts,
     };
 }
 

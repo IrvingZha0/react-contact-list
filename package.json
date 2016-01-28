@@ -1,15 +1,14 @@
 {
   "name": "react-contact-list",
   "version": "1.0.0",
-  "description": "Contact list built in react",
+  "description": "Contact list built in React and Hapi",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/searsaw/react-contact-list.git"
   },
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --progress --colors --watch",
-    "start": "webpack-dev-server --inline --hot"
+    "watch": "watchify src/js/app.js -d -t babelify --extension=.jsx -o build/js/bundle.js",
+    "start": "nodemon --exec babel-node server.js"
   },
   "author": "Alex Sears",
   "license": "MIT",
@@ -19,23 +18,26 @@
   "homepage": "https://github.com/searsaw/react-contact-list#readme",
   "devDependencies": {
     "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
     "babel-core": "^6.4.0",
     "babel-eslint": "^5.0.0-beta6",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
     "eslint": "^1.10.3",
     "eslint-config-standard": "^4.4.0",
     "eslint-loader": "^1.2.0",
     "eslint-plugin-react": "^3.14.0",
     "eslint-plugin-standard": "^1.3.1",
     "vinyl-source-stream": "^1.1.0",
-    "webpack": "^1.12.10",
-    "webpack-dev-server": "^1.14.0",
-    "webpack-notifier": "^1.2.1"
+    "watchify": "^3.7.0"
   },
   "dependencies": {
+    "hapi": "^12.1.0",
     "immutable": "^3.7.6",
+    "inert": "^3.2.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",

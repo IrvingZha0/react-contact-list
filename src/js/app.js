@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducer';
-import { setState } from './action_creators';
+import { setContacts } from './action_creators';
 import App from './components/App';
 import { fromJS } from 'immutable';
 
@@ -14,30 +14,11 @@ body.appendChild(appContainer);
 
 const store = createStore(reducers);
 
-store.dispatch(setState(fromJS({
-    contacts: [
-        {
-            firstName: 'Alex',
-            lastName: 'Sears',
-            age: 26,
-        },
-        {
-            firstName: 'Stephanie',
-            lastName: 'Holtgrefe',
-            age: 25,
-        },
-        {
-            firstName: 'Marissa',
-            lastName: 'Sears',
-            age: 22,
-        },
-        {
-            firstName: 'Elijah',
-            lastName: 'Sears',
-            age: 19,
-        },
-    ],
-})));
+fetch('http://localhost:3000/api/contacts')
+    .then(res => res.json())
+    .then(contacts => {
+        store.dispatch(setContacts(fromJS(contacts)));
+    });
 
 const application = (
     <Provider store={store}>
